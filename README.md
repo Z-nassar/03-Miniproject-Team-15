@@ -65,13 +65,13 @@ For the question below, feel free to use musical scale of your choice!
 My task was to make a mock enclosure for the device that's built to scale, should we decide to print this professional housing for our final product. The measurements are as follows:
 Measurements:(LxWxH)
 
-Raspberry Pi=63mm*57mm*23mm
+Raspberry Pi=63mm x 57mm x 23mm
 
-Buzzer speaker=29.7mm*29.7mm*9.2mm
+Buzzer speaker=29.7mm x 29.7mm x 9.2mm
 
-Switches=12mm * 12mm x*7.3mm 
+Switches=12mm x 12mm x 7.3mm 
 
-Led=5.8mm*5.8mm*9mm
+Led=5.8mm x 5.8mm x 9mm
 
 Photoresistor= 5.8mm*5.8mm*5.5mm
 <img width="1898" height="1084" alt="image" src="https://github.com/user-attachments/assets/d711d2e8-3b7f-4784-a469-68182a312c6b" />
