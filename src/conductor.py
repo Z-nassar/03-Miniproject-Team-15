@@ -8,7 +8,7 @@ import time
 # --- Configuration ---
 # Students should populate this list with the IP address(es of their Picos
 PICO_IPS = [
-    "192.168.1.101",
+    "10.193.187.126"
 ]
 
 # --- Music Definition ---
@@ -48,10 +48,12 @@ def play_note_on_all_picos(freq, ms):
     """Sends a /tone POST request to every Pico in the list."""
     print(f"Playing note: {freq}Hz for {ms}ms on all devices.")
 
-    payload = {"freq": freq, "ms": ms, "duty": 0.5}
+    payload = {"frequency": freq, "duration": ms / 1000}  # seconds, since Pico expects duration_s
+
+
 
     for ip in PICO_IPS:
-        url = f"http://{ip}/tone"
+        url = f"http://{ip}/play_note"
         try:
             # We use a short timeout because we don't need to wait for a response
             # This makes the orchestra play more in sync.
