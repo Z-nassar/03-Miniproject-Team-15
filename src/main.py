@@ -11,38 +11,24 @@ import asyncio
 # The photosensor is connected to an Analog-to-Digital Converter (ADC) pin.
 # We will read the voltage, which changes based on light.
 photo_sensor_pin = machine.ADC(26)
-
 # The buzzer is connected to a GPIO pin that supports Pulse Width Modulation (PWM).
 # PWM allows us to create a square wave at a specific frequency to make a sound.
-buzzer_pin = machine.PWM(machine.Pin(18))
-
+buzzer_pin = machine.PWM(machine.Pin(15))
+buzzer_pin.freq(0)
+buzzer_pin.duty_u16(0)
 # --- Global State ---
 # This variable will hold the task that plays a note from an API call.
 # This allows us to cancel it if a /stop request comes in.
 api_note_task = None
 
+
 # --- Core Functions ---
 
 
-def connect_to_wifi(wifi_config: str = "wifi_config.json"):
-    """Connects the Pico W to the specified Wi-Fi network.
-
-    This expects a JSON text file 'wifi_config.json' with 'ssid' and 'password' keys,
-    which would look like
-    {
-        "ssid": "your_wifi_ssid",
-        "password": "your_wifi_password"
-    }
-    """
-
-    with open(wifi_config, "r") as f:
-        data = json.load(f)
-
+def connect_to_wifi():
     wlan = network.WLAN(network.STA_IF)
     wlan.active(True)
-    wlan.connect(data["ssid"], data["password"])
-
-    # Wait for connection or fail
+    wlan.connect("BU Guest (unencrypted)")  # No password
     max_wait = 10
     print("Connecting to Wi-Fi...")
     while max_wait > 0:
@@ -50,14 +36,12 @@ def connect_to_wifi(wifi_config: str = "wifi_config.json"):
             break
         max_wait -= 1
         time.sleep(1)
-
     if wlan.status() != 3:
         raise RuntimeError("Network connection failed")
     else:
-        status = wlan.ifconfig()
-        ip_address = status[0]
+        ip_address = wlan.ifconfig()[0]
         print(f"Connected! Pico IP Address: {ip_address}")
-    return ip_address
+        return ip_address
 
 
 def play_tone(frequency: int, duration_ms: int) -> None:
@@ -198,28 +182,7 @@ async def main():
     # This loop runs the "default" behavior: playing sound based on light
     while True:
         # Only run this loop if no API note is currently scheduled to play
-        if api_note_task is None or api_note_task.done():
-            # Read the sensor. Values range from ~500 (dark) to ~65535 (bright)
-            light_value = photo_sensor_pin.read_u16()
 
-            # Map the light value to a frequency range (e.g., C4 to C6)
-            # Adjust the input range based on your room's lighting
-            min_light = 1000
-            max_light = 65000
-            min_freq = 261  # C4
-            max_freq = 1046  # C6
-
-            # Clamp the light value to the expected range
-            clamped_light = max(min_light, min(light_value, max_light))
-
-            if clamped_light > min_light:
-                frequency = map_value(
-                    clamped_light, min_light, max_light, min_freq, max_freq
-                )
-                buzzer_pin.freq(frequency)
-                buzzer_pin.duty_u16(32768)  # 50% duty cycle
-            else:
-                stop_tone()  # If it's very dark, be quiet
 
         await asyncio.sleep_ms(50)  # type: ignore[attr-defined]
 
