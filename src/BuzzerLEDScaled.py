@@ -52,50 +52,62 @@ try:
         # ---- Thresholds ----
         if bright >= 0.90:
             buzzer.freq(C5)
+            tone = C5
             show(1, 0, 0)     # Red
             color = "Red"
         elif bright >= 0.80:
             buzzer.freq(C5)
+            tone = C5
             show(1, 0, 0)     # Red
             color = "Red"
         elif bright >= 0.70:
             buzzer.freq(B4)
+            tone = B4
             show(1, 0, 1)     # Purple
             color = "Purple"
         elif bright >= 0.60:
             buzzer.freq(A4)
+            tone = A4
             show(0, 0, 1)     # Blue
             color = "Blue"
         elif bright >= 0.50:
             buzzer.freq(G4)
+            tone = G4
             show(0, 0, 1)     # Blue
             color = "Blue"
         elif bright >= 0.40:
             buzzer.freq(F4)
+            tone = F4
             show(0, 1, 0)     # Green
             color = "Green"
         elif bright >= 0.30:
             buzzer.freq(E4)
+            tone = E4
             show(1, 1, 0)     # Yellow
             color = "Yellow"
         elif bright >= 0.20:
             buzzer.freq(D4)
+            tone = D4
             show(1, 1, 0)     # Yellow
             color = "Yellow"
         elif bright >= 0.10:
             buzzer.freq(C4)
+            tone = C4
             show(1, 0, 0)     # Red
             color = "Red"
         else:
             buzzer.freq(C4)
+            tone = C4
             show(1, 0, 0)     # Red
             color = "Red"
         
         buzzer.duty_u16(1000)   # Medium Volume in other versions
 
         # Debug print
-        print(f"raw={smoothed:5d}  bright={bright:.2f}  color = {color}")
-        
+        # The variables tone and color are used only for debugging purposes
+        print(f"raw = {smoothed:5d}  bright = {bright:.2f}")
+        print(f"color = {color} tone = {tone}")
+
         time.sleep(0.2)         # Changes time between tone/color updates
 
 except KeyboardInterrupt:
