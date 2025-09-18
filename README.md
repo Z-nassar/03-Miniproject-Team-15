@@ -117,16 +117,16 @@ By combining API requests (GET and POST) with wireless communication, this proje
 for building interactive IoT systems that bridge hardware with network-based control.
 
 
-# GET request to play a default tune
+## GET request to play a default tune
 curl http://<PICO_IP>/play-tune
 
-# POST request to play a tune with parameters
+## POST request to play a tune with parameters
 curl -X POST http://<PICO_IP>/play-tune -d '{"note":"C","duration":2}'
 
-# GET request to read light intensity
+## GET request to read light intensity
 curl http://<PICO_IP>/light-intensity
 
-# POST request with light intensity data (example use case)
+## POST request with light intensity data (example use case)
 curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
 
