@@ -38,7 +38,7 @@ I wired the circuit together and coded test files for all our components. Some o
 2. RGB LED Test Code.py — RGB LED on GP1/GP2/GP3; cycles blue → green → red every 2 seconds and prints the color.
 3. Photoresistor Test Code.py — Reads LDR on GP28 (ADC2), smooths it, inverts it, reads and prints 0–100% brightness from photoresistor every 0.1 second.
 4. Buzzer LED Test Code.py — Maps buzzer and LED together such that it cycles blue/quiet → green/medium → red/loud every 2 seconds.
-5. main_v1.py — Maps light to outputs by combining buzzer, LED, photoresistor such that low brightness is blue + quiet, medium brightness is green + medium, high brightness is red + loud.
+5. main v2.py — Maps brightness on photoresistors to output on the buzzer and LED such that low brightness is blue + quiet, medium brightness is green + medium, high brightness is red + loud. Thresholds are reached by taking the max brightness out of both photoresistors to cover more surface area.
 
 ### CAD Enclosure (Keimaree Smith)
 My task was to make a mock enclosure for the device that's built to scale, should we decide to print this professional housing for our final product. The measurements are as follows:
