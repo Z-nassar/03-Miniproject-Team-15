@@ -129,6 +129,7 @@ curl http://<PICO_IP>/light-intensity
 ## POST request with light intensity data (example use case)
 curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
+# Should the two following sections be removed?
 
 ## Notes
 
