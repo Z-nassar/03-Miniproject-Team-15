@@ -92,7 +92,7 @@ Over human history, the corresspondance of notes to frequencies has changed over
 For the question below, feel free to use musical scale of your choice!
 
 [Music Examples](https://github.com/twisst/Music-for-Raspberry-Pi-Pico/blob/main/play.py)
-# Raspberry Pi Pico 2W API Integration
+# Raspberry Pi Pico 2W API Integration (John Goytia, Prashast Pandey)
 
 This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W to enable remote interaction over Wi-Fi.  
 The Pico 2W is programmed to connect to a wireless network, making it accessible to other devices on the same network.  
@@ -129,33 +129,6 @@ curl http://<PICO_IP>/light-intensity
 # POST request with light intensity data (example use case)
 curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
-# Raspberry Pi Pico 2W API Integration (John Goytia, Prashast Pandey)
-
-This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W to enable remote interaction over Wi-Fi.  
-The Pico 2W is programmed to connect to a wireless network, making it accessible to other devices on the same network.  
-A student computer can send HTTP API requests to the Pico, allowing for real-time control and data retrieval.
-
-## Features
-- **Play a Tune**  
-  When an API request is received, the Pico can generate and play a tune through its connected buzzer.
-
-- **Light Intensity Measurement**  
-  The Pico is equipped with a light sensor that can measure the intensity of surrounding light.  
-  By sending an API request, the computer retrieves the current sensor reading.
-
-## Project Overview
-This setup demonstrates how microcontrollers like the Raspberry Pi Pico 2W can be used in IoT applications,  
-where devices respond to remote commands or provide sensor data over a network.
-
-By combining API requests with wireless communication, this project provides a simple but effective model  
-for building interactive IoT systems that bridge hardware with network-based control.
-
-
-## Play a tune
-curl http://<PICO_IP>/play-tune
-
-## Get light intensity
-curl http://<PICO_IP>/light-intensity
 
 ## Notes
 
