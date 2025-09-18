@@ -92,7 +92,7 @@ Over human history, the corresspondance of notes to frequencies has changed over
 For the question below, feel free to use musical scale of your choice!
 
 [Music Examples](https://github.com/twisst/Music-for-Raspberry-Pi-Pico/blob/main/play.py)
-# Raspberry Pi Pico 2W API Integration (John Goytia, Prashast Pandey)
+## Raspberry Pi Pico 2W API Integration (John Goytia, Prashast Pandey)
 
 This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W to enable remote interaction over Wi-Fi.  
 The Pico 2W is programmed to connect to a wireless network, making it accessible to other devices on the same network.  
