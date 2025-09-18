@@ -26,6 +26,13 @@ Other IDE can be used, including Visual Studio Code or
 * 10k ohm resistor
 * 2 [tactile switches](hhttps://www.mouser.com/ProductDetail/E-Switch/TL59NF160Q?qs=QtyuwXswaQgJqDRR55vEFA%3D%3D)
 
+### Circuit/Hardware Configuration
+<img width="804" height="758" alt="image" src="https://github.com/user-attachments/assets/fbaa90a9-11e3-4ad3-829e-cc4682dff288" />
+
+The above figure represents a flattened ideal view of the circuit configuration that was used for our project. Unfortunately, the software used to create the image (TinkerCAD) does not have the ability to represent a Raspberry Pi Pico 2 W. So, instead an Arduino Uno board was used as a stand-in. Other parts that were used in this configuration included three 220 ohm resistors, one 30 kohm resistor, a buzzer, an RGB LED, and a photoresistor. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the 30 kohm resistor was used in series with the photoresistor.
+
+### Should the two following sections be removed?
+
 ### Photoresistor details
 
 The photoresistor uses the 10k ohm resistor as a voltage divider
