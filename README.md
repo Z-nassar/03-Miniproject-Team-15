@@ -26,12 +26,12 @@ Other IDE can be used, including Visual Studio Code or
 * 10k ohm resistor
 * 2 [tactile switches](hhttps://www.mouser.com/ProductDetail/E-Switch/TL59NF160Q?qs=QtyuwXswaQgJqDRR55vEFA%3D%3D)
 
-### Circuit/Hardware Configuration
+## Circuit/Hardware Configuration
 <img width="804" height="758" alt="image" src="https://github.com/user-attachments/assets/fbaa90a9-11e3-4ad3-829e-cc4682dff288" />
 
 The above figure represents a flattened ideal view of the circuit configuration that was used for our project. Unfortunately, the software used to create the image (TinkerCAD) does not have the ability to represent a Raspberry Pi Pico 2 W. So, instead an Arduino Uno board was used as a stand-in. Other parts that were used in this configuration included three 220 ohm resistors, one 30 kohm resistor, a buzzer, an RGB LED, and a photoresistor. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the 30 kohm resistor was used in series with the photoresistor.
 
-### Should the two following sections be removed?
+# Should the two following sections be removed?
 
 ### Photoresistor details
 
@@ -68,7 +68,7 @@ For the question below, feel free to use musical scale of your choice!
 
 [Music Examples](https://github.com/twisst/Music-for-Raspberry-Pi-Pico/blob/main/play.py)
 
-# Cad Enclosure (Keimaree Smith)
+## Cad Enclosure (Keimaree Smith)
 My task was to make a mock enclosure for the device that's built to scale, should we decide to print this professional housing for our final product. The measurements are as follows:
 Measurements:(LxWxH)
 
@@ -84,9 +84,9 @@ Photoresistor= 5.8mm x 5.8mm x 5.5mm
 <img width="1898" height="1084" alt="image" src="https://github.com/user-attachments/assets/d711d2e8-3b7f-4784-a469-68182a312c6b" />
 <img width="1898" height="1094" alt="image" src="https://github.com/user-attachments/assets/a0cd9500-33db-46f3-b81e-2906e4b059a7" />
 
-### Demo
+## Demo
 
-### Should probably remove the two following sections or update them
+# Should probably remove the two following sections or update them
 ## Notes
 
 Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
