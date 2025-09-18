@@ -84,7 +84,9 @@ Photoresistor= 5.8mm x 5.8mm x 5.5mm
 <img width="1898" height="1084" alt="image" src="https://github.com/user-attachments/assets/d711d2e8-3b7f-4784-a469-68182a312c6b" />
 <img width="1898" height="1094" alt="image" src="https://github.com/user-attachments/assets/a0cd9500-33db-46f3-b81e-2906e4b059a7" />
 
+### Demo
 
+### Should probably remove the two following sections or update them
 ## Notes
 
 Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
