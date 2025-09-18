@@ -92,8 +92,44 @@ Over human history, the corresspondance of notes to frequencies has changed over
 For the question below, feel free to use musical scale of your choice!
 
 [Music Examples](https://github.com/twisst/Music-for-Raspberry-Pi-Pico/blob/main/play.py)
+# Raspberry Pi Pico 2W API Integration
 
-## Raspberry Pi Pico 2W API Integration
+This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W to enable remote interaction over Wi-Fi.  
+The Pico 2W is programmed to connect to a wireless network, making it accessible to other devices on the same network.  
+A student computer can send HTTP API requests (both GET and POST) to the Pico, allowing for real-time control and data retrieval.
+
+## Features
+- **Play a Tune**  
+  The Pico can generate and play a tune through its connected buzzer.  
+  - `GET /play-tune` will play a default tune.  
+  - `POST /play-tune` can include parameters (e.g., note or duration) to customize the sound.
+
+- **Light Intensity Measurement**  
+  The Pico is equipped with a light sensor to measure surrounding light levels.  
+  - `GET /light-intensity` will return the current sensor reading.  
+  - `POST /light-intensity` can log or trigger further actions with the sensor value.
+
+## Project Overview
+This setup demonstrates how microcontrollers like the Raspberry Pi Pico 2W can be used in IoT applications,  
+where devices respond to remote commands or provide sensor data over a network.
+
+By combining API requests (GET and POST) with wireless communication, this project provides a simple but effective model  
+for building interactive IoT systems that bridge hardware with network-based control.
+
+
+# GET request to play a default tune
+curl http://<PICO_IP>/play-tune
+
+# POST request to play a tune with parameters
+curl -X POST http://<PICO_IP>/play-tune -d '{"note":"C","duration":2}'
+
+# GET request to read light intensity
+curl http://<PICO_IP>/light-intensity
+
+# POST request with light intensity data (example use case)
+curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
+
+# Raspberry Pi Pico 2W API Integration (John Goytia, Prashast Pandey)
 
 This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W to enable remote interaction over Wi-Fi.  
 The Pico 2W is programmed to connect to a wireless network, making it accessible to other devices on the same network.  
@@ -115,15 +151,12 @@ By combining API requests with wireless communication, this project provides a s
 for building interactive IoT systems that bridge hardware with network-based control.
 
 
-# Play a tune
+## Play a tune
 curl http://<PICO_IP>/play-tune
 
-# Get light intensity
+## Get light intensity
 curl http://<PICO_IP>/light-intensity
 
-## Demo
-
-# Should probably remove the two following sections or update them
 ## Notes
 
 Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
