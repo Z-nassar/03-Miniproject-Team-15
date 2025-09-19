@@ -2,12 +2,14 @@
 
 [Project definition](./Project.md)
 
-This project uses the Raspberry Pi Pico 2WH SC1634 (wireless, with header pins).
-This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Thonny IDE](./doc/thonny.md). Other IDE can be used, including Visual Studio Code or [rshell](./doc/rshell.md).
+The goal of this project was to use the provided Raspberry Pi Pico 2WH SC1634 (wireless, with header pins), buzzer, and photoresistor to create a light ochestra (a device that would produce a sound or other output as a result of a light input). Several different lines of development were followed in this project and the result was four distinct deliverables: API intergration for the Raspberry Pi, a light orchestra with two photoresistors that scales volume, a light orchestra with one photoresistor that scales tone (derived from the volume light orchestra), and a CAD model of a possible enclosure for the device. 
+
+This project was created using [MicroPython](./doc/micropython.md) and [Thonny IDE](./doc/thonny.md).
 
 ## Videos/Demoes
 * [Working with API](https://drive.google.com/file/d/1rF_9OHENMlV6wJc0hUqTYPZZ5KIkNX32/view?usp=sharing)
 * [Light Orchestra with Photoresistors, LED, Buzzer](https://drive.google.com/file/d/1zt_kSiG6cxKfdzKx5vofzYIg05cQD7c7/view?usp=sharing)
+* [Light Orchestra with a Scaled Tone Output](https://drive.google.com/file/d/1YlJdYv4P6-w5sr-QGmZmXdrBWFg7n6NT/view?usp=sharing)
 
 ## Hardware
 * Raspberry Pi Pico WH [SC1634](https://pip.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w) (WiFi, Bluetooth, with header pins)
@@ -102,13 +104,15 @@ curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
 
 ## Feature Extension and Documentation (Zachary Nassar)
-I expanded on 
+I expanded on the mainv2.py code written by Ezan such that light intensity was mapped to a scale of tones instead of volume. Additionally, I changed the behaviour of the LED so that it would flash through a scale of colors as light intensity increased. This can be seen in the file BuzzerLEDScaled.py.
+
+I also generally updated the README and created the TinkerCAD figures of the circuit configurations used in our project.
 
 
-## Notes
-Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
-Duty cycle greater than 1 is undefined, so we clip the duty cycle to the range [0, 1].
-
+## Next Steps
+If more time was allocated to work on this project, some next steps we would take would be to:
+* Integrate the the light orchestra code and the API integration code as well as to integrate the two different versions of the light orchestra code
+* Add the ability to change the octave of the scale for the scaled tones light orchestra
 
 ## Reference
 * [Pico 2WH pinout diagram](https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf) shows the connections to analog and digital IO.
