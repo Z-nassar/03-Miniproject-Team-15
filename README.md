@@ -3,20 +3,11 @@
 [Project definition](./Project.md)
 
 This project uses the Raspberry Pi Pico 2WH SC1634 (wireless, with header pins).
+This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Thonny IDE](./doc/thonny.md). Other IDE can be used, including Visual Studio Code or [rshell](./doc/rshell.md).
 
-Each team must provide a micro-USB cable that connects to their laptop to plug into the Pi Pico.
-The cord must have the data pins connected.
-Splitter cords with multiple types of connectors fanning out may not have data pins connected.
-Such micro-USB cords can be found locally at Microcenter, convenience stores, etc.
-The student laptop is used to program the Pi Pico.
-The laptop software to program and debug the Pi Pico works on macOS, Windows, and Linux.
-
-This miniproject focuses on using
-[MicroPython](./doc/micropython.md)
-using
-[Thonny IDE](./doc/thonny.md).
-Other IDE can be used, including Visual Studio Code or
-[rshell](./doc/rshell.md).
+## Videos
+* [Working with API](https://drive.google.com/file/d/1rF_9OHENMlV6wJc0hUqTYPZZ5KIkNX32/view?usp=sharing)
+* [Light Orchestra with Photoresistors, LED, Buzzer](https://drive.google.com/file/d/1zt_kSiG6cxKfdzKx5vofzYIg05cQD7c7/view?usp=sharing)
 
 ## Hardware
 * Raspberry Pi Pico WH [SC1634](https://pip.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w) (WiFi, Bluetooth, with header pins)
@@ -40,61 +31,20 @@ I wired the circuit together and coded test files for all our components. Some o
 4. Buzzer LED Test Code.py — Maps buzzer and LED together such that it cycles blue/quiet → green/medium → red/loud every 2 seconds.
 5. main v2.py — Maps brightness on photoresistors to output on the buzzer and LED such that low brightness is blue + quiet, medium brightness is green + medium, high brightness is red + loud. Thresholds are reached by taking the max brightness out of both photoresistors to cover more surface area.
 
-[Watch the demo video](light%20orchestra%20recording.mov)
+Watch the [demo video](light%20orchestra%20recording.mov). If that link doesn't work, try [this](https://drive.google.com/file/d/1zt_kSiG6cxKfdzKx5vofzYIg05cQD7c7/view?usp=sharing).
 
 
 ### CAD Enclosure (Keimaree Smith)
 My task was to make a mock enclosure for the device that's built to scale, should we decide to print this professional housing for our final product. The measurements are as follows:
 Measurements:(LxWxH)
-
-Raspberry Pi=63mm x 57mm x 23mm
-
-Buzzer speaker=29.7mm x 29.7mm x 9.2mm
-
-Switches=12mm x 12mm x 7.3mm 
-
-Led=5.8mm x 5.8mm x 9mm
-
-Photoresistor= 5.8mm x 5.8mm x 5.5mm
+* Raspberry Pi=63mm x 57mm x 23mm
+* Buzzer speaker=29.7mm x 29.7mm x 9.2mm
+* Switches=12mm x 12mm x 7.3mm
+* Led=5.8mm x 5.8mm x 9mm
+* Photoresistor= 5.8mm x 5.8mm x 5.5mm
 <img width="1898" height="1084" alt="image" src="https://github.com/user-attachments/assets/d711d2e8-3b7f-4784-a469-68182a312c6b" />
 <img width="1898" height="1094" alt="image" src="https://github.com/user-attachments/assets/a0cd9500-33db-46f3-b81e-2906e4b059a7" />
 
-# Should the two following sections be removed?
-
-### Photoresistor details
-
-The photoresistor uses the 10k ohm resistor as a voltage divider
-[circuit](./doc/photoresistor.md).
-The 10k ohm resistor connects to "3V3" and to ADC2.
-The photoresistor connects to the ADC2 and to AGND.
-Polarity is not important for this resistor and photoresistor.
-
-The MicroPython
-[machine.ADC](https://docs.micropython.org/en/latest/library/machine.ADC.html)
-class is used to read the analog voltage from the photoresistor.
-The `machine.ADC(id)` value corresponds to the "GP" pin number.
-On the Pico W, GP28 is ADC2, accessed with `machine.ADC(28)`.
-
-### Piezo buzzer details
-
-PWM (Pulse Width Modulation) can be used to generate analog signals from digital outputs.
-The Raspberry Pi Pico has eight PWM groups each with two PWM channels.
-The [Pico WH pinout diagram](https://datasheets.raspberrypi.com/picow/PicoW-A4-Pinout.pdf)
-shows that almost all Pico pins can be used for multiple distinct tasks as configured by MicroPython code or other software.
-In this exercise, we will generate a PWM signal to drive a speaker.
-
-GP16 is one of the pins that can be used to generate PWM signals.
-Connect the speaker with the black wire (negative) to GND and the red wire (positive) to GP16.
-
-In a more complete project, we would use additional resistors and capacitors with an amplifer to boost the sound output to a louder level with a bigger speaker.
-The sound output is quiet but usable for this exercise.
-
-Musical notes correspond to particular base frequencies and typically have rich harmonics in typical musical instruments.
-An example soundboard showing note frequencies is [clickable](https://muted.io/note-frequencies/).
-Over human history, the corresspondance of notes to frequencies has changed over time and location and musical cultures.
-For the question below, feel free to use musical scale of your choice!
-
-[Music Examples](https://github.com/twisst/Music-for-Raspberry-Pi-Pico/blob/main/play.py)
 ## Raspberry Pi Pico 2W API Integration (John Goytia, Prashast Pandey)
 
 This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W to enable remote interaction over Wi-Fi.  
