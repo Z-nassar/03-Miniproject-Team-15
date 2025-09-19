@@ -4,7 +4,7 @@
 
 The goal of this project was to use the provided Raspberry Pi Pico 2WH SC1634 (wireless, with header pins), buzzer, and photoresistor to create a light ochestra (a device that would produce a sound or other output as a result of a light input). Several different lines of development were followed in this project and the result was four distinct deliverables: API intergration for the Raspberry Pi, a light orchestra with two photoresistors that scales volume, a light orchestra with one photoresistor that scales tone (derived from the volume light orchestra), and a CAD model of a possible enclosure for the device. 
 
-This project was created using [MicroPython](./doc/micropython.md) and [Thonny IDE](./doc/thonny.md).
+This project used [MicroPython](./doc/micropython.md) and [Thonny IDE](./doc/thonny.md).
 
 ## Videos/Demoes
 * [Working with API](https://drive.google.com/file/d/1rF_9OHENMlV6wJc0hUqTYPZZ5KIkNX32/view?usp=sharing)
