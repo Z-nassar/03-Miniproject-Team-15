@@ -19,7 +19,7 @@ This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Tho
 * One 30k Ohm Resistor
 * One RGB LED
 
-## Circuit/Hardware Configuration (Section Written by Zachary Nassar)
+## Circuit/Hardware Configuration
 <img width="620" height="606" alt="image" src="https://github.com/user-attachments/assets/69597318-c87e-44b7-86c0-0a5f9d715e4f" />
 
 The above figure represents a flattened ideal view of the first circuit configuration that was used for our project. Unfortunately, the software used to create the image (TinkerCAD) does not have the ability to represent a Raspberry Pi Pico 2 W. So, instead an Arduino Uno board was used as a stand-in. Other parts that were used in this configuration included three 220 ohm resistors, two 10k ohm resistor, a buzzer, an RGB LED, and two photoresistors. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the two 10 kohm resistors were used in series with the photoresistors.
@@ -99,6 +99,11 @@ curl http://<PICO_IP>/light-intensity
 
 #### POST request with light intensity data (example use case)
 curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
+
+
+## Feature Extension and Documentation (Zachary Nassar)
+I expanded on 
+
 
 ## Notes
 Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
