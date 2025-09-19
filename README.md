@@ -17,13 +17,13 @@ This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Tho
 * Three 220 ohm resistors
 * One 10k ohm resistor
 
-### Circuit/Hardware Configuration (Zachary Nassar)
+## Circuit/Hardware Configuration (Zachary Nassar)
 <img width="804" height="758" alt="image" src="https://github.com/user-attachments/assets/fbaa90a9-11e3-4ad3-829e-cc4682dff288" />
 
 The above figure represents a flattened ideal view of the circuit configuration that was used for our project. Unfortunately, the software used to create the image (TinkerCAD) does not have the ability to represent a Raspberry Pi Pico 2 W. So, instead an Arduino Uno board was used as a stand-in. Other parts that were used in this configuration included three 220 ohm resistors, one 30 kohm resistor, a buzzer, an RGB LED, and a photoresistor. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the 30 kohm resistor was used in series with the photoresistor.
 
 
-### Component Test Codes (Ezan Khan)
+## Component Test Codes (Ezan Khan)
 I wired the circuit together and coded test files for all our components. Some of the files I added are:
 1. Buzzer Test Code.py — PWM buzzer on GP15 at 523 Hz; cycles quiet → medium → loud every 2 seconds and prints the volume level.
 2. RGB LED Test Code.py — RGB LED on GP1/GP2/GP3; cycles blue → green → red every 2 seconds and prints the color.
@@ -34,7 +34,7 @@ I wired the circuit together and coded test files for all our components. Some o
 Watch the [demo video](light%20orchestra%20recording.mov). If that link doesn't work, try [this](https://drive.google.com/file/d/1zt_kSiG6cxKfdzKx5vofzYIg05cQD7c7/view?usp=sharing).
 
 
-### CAD Enclosure (Keimaree Smith)
+## CAD Enclosure (Keimaree Smith)
 Online 3D viewing for product housing: https://a360.co/47LtF9N
 
 My task was to make a mock enclosure for the device that's built to scale, should we decide to print this professional housing for our final product. The measurements are as follows:
