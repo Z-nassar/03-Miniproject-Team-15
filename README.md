@@ -40,7 +40,7 @@ I wired the circuit together and coded test files for all our components. Some o
 4. Buzzer LED Test Code.py — Maps buzzer and LED together such that it cycles blue/quiet → green/medium → red/loud every 2 seconds.
 5. main v2.py — Maps brightness on photoresistors to output on the buzzer and LED such that low brightness is blue + quiet, medium brightness is green + medium, high brightness is red + loud. Thresholds are reached by taking the max brightness out of both photoresistors to cover more surface area.
 
-[Watch the demo video](media/light%20orchestra%20recording.mov)
+[Watch the demo video](light%20orchestra%20recording.mov)
 
 
 ### CAD Enclosure (Keimaree Smith)
