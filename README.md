@@ -5,7 +5,7 @@
 This project uses the Raspberry Pi Pico 2WH SC1634 (wireless, with header pins).
 This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Thonny IDE](./doc/thonny.md). Other IDE can be used, including Visual Studio Code or [rshell](./doc/rshell.md).
 
-## Videos
+## Videos/Demoes
 * [Working with API](https://drive.google.com/file/d/1rF_9OHENMlV6wJc0hUqTYPZZ5KIkNX32/view?usp=sharing)
 * [Light Orchestra with Photoresistors, LED, Buzzer](https://drive.google.com/file/d/1zt_kSiG6cxKfdzKx5vofzYIg05cQD7c7/view?usp=sharing)
 
@@ -13,20 +13,30 @@ This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Tho
 * Raspberry Pi Pico WH [SC1634](https://pip.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w) (WiFi, Bluetooth, with header pins)
 * Freenove Pico breakout board [FNK0081](https://store.freenove.com/products/fnk0081)
 * Piezo Buzzer SameSky [CPT-3095C-300](https://www.mouser.com/datasheet/3/6118/1/cpt-3095c-300.pdf)
-* Photoresistor Advanced Photonix [NSL-A5013](https://www.mouser.com/datasheet/3/5923/1/ds-nsl-a501-series.pdf) 
+* Two Photoresistor Advanced Photonix [NSL-A5013](https://www.mouser.com/datasheet/3/5923/1/ds-nsl-a501-series.pdf) 
 * Three 220 Ohm Resistors
 * Two 10k Ohm Resistor
-* One 30k Ohm Resistor 
+* One 30k Ohm Resistor
+* One RGB LED
 
 ## Circuit/Hardware Configuration (Section Written by Zachary Nassar)
 <img width="620" height="606" alt="image" src="https://github.com/user-attachments/assets/69597318-c87e-44b7-86c0-0a5f9d715e4f" />
 
 The above figure represents a flattened ideal view of the first circuit configuration that was used for our project. Unfortunately, the software used to create the image (TinkerCAD) does not have the ability to represent a Raspberry Pi Pico 2 W. So, instead an Arduino Uno board was used as a stand-in. Other parts that were used in this configuration included three 220 ohm resistors, two 10k ohm resistor, a buzzer, an RGB LED, and two photoresistors. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the two 10 kohm resistors were used in series with the photoresistors.
 
+<img width="278" height="464" alt="image" src="https://github.com/user-attachments/assets/484a663a-cb8a-42c5-b1c2-f667f36ec40b" />
+
+The above figure is an image of the first circuit configuration that was used for our project.
+
+
 
 <img width="804" height="758" alt="image" src="https://github.com/user-attachments/assets/fbaa90a9-11e3-4ad3-829e-cc4682dff288" />
 
 The above figure represents a flattened ideal view of the second circuit configuration that was used for our project. Again, the Arduino Uno was used as a stand-in for a Raspberry Pi Pico. Other parts that were used in this configuration included three 220 ohm resistors, one 30k oohm resistor, a buzzer, an RGB LED, and a photoresistor. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the 30 kohm resistor was used in series with the photoresistor.
+
+<img width="512" height="849" alt="image" src="https://github.com/user-attachments/assets/e529e0e4-d308-46e1-b3a8-458d82a88e45" />
+
+The above figure is an image of the second circuit configuration that was used for our project.
 
 
 ## Component Test Codes (Ezan Khan)
@@ -59,7 +69,7 @@ This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W 
 The Pico 2W is programmed to connect to a wireless network, making it accessible to other devices on the same network.  
 A student computer can send HTTP API requests (both GET and POST) to the Pico, allowing for real-time control and data retrieval.
 
-### Features
+#### Features
 - **Play a Tune**  
   The Pico can generate and play a tune through its connected buzzer.  
   - `GET /play-tune` will play a default tune.  
@@ -70,7 +80,7 @@ A student computer can send HTTP API requests (both GET and POST) to the Pico, a
   - `GET /light-intensity` will return the current sensor reading.  
   - `POST /light-intensity` can log or trigger further actions with the sensor value.
 
-### Project Overview
+#### Project Overview
 This setup demonstrates how microcontrollers like the Raspberry Pi Pico 2W can be used in IoT applications,  
 where devices respond to remote commands or provide sensor data over a network.
 
@@ -78,16 +88,16 @@ By combining API requests (GET and POST) with wireless communication, this proje
 for building interactive IoT systems that bridge hardware with network-based control.
 
 
-### GET request to play a default tune
+#### GET request to play a default tune
 curl http://<PICO_IP>/play-tune
 
-### POST request to play a tune with parameters
+#### POST request to play a tune with parameters
 curl -X POST http://<PICO_IP>/play-tune -d '{"note":"C","duration":2}'
 
-### GET request to read light intensity
+#### GET request to read light intensity
 curl http://<PICO_IP>/light-intensity
 
-### POST request with light intensity data (example use case)
+#### POST request with light intensity data (example use case)
 curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
 ## Notes
