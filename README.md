@@ -17,10 +17,15 @@ This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Tho
 * Three 220 ohm resistors
 * One 10k ohm resistor
 
-## Circuit/Hardware Configuration (Zachary Nassar)
+## Circuit/Hardware Configuration (Section Written by Zachary Nassar)
+<img width="620" height="606" alt="image" src="https://github.com/user-attachments/assets/69597318-c87e-44b7-86c0-0a5f9d715e4f" />
+
+The above figure represents a flattened ideal view of the first circuit configuration that was used for our project. Unfortunately, the software used to create the image (TinkerCAD) does not have the ability to represent a Raspberry Pi Pico 2 W. So, instead an Arduino Uno board was used as a stand-in. Other parts that were used in this configuration included three 220 ohm resistors, two 10k ohm resistor, a buzzer, an RGB LED, and two photoresistors. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the two 10 kohm resistors were used in series with the photoresistors.
+
+
 <img width="804" height="758" alt="image" src="https://github.com/user-attachments/assets/fbaa90a9-11e3-4ad3-829e-cc4682dff288" />
 
-The above figure represents a flattened ideal view of the circuit configuration that was used for our project. Unfortunately, the software used to create the image (TinkerCAD) does not have the ability to represent a Raspberry Pi Pico 2 W. So, instead an Arduino Uno board was used as a stand-in. Other parts that were used in this configuration included three 220 ohm resistors, one 30 kohm resistor, a buzzer, an RGB LED, and a photoresistor. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the 30 kohm resistor was used in series with the photoresistor.
+The above figure represents a flattened ideal view of the second circuit configuration that was used for our project. Again, the Arduino Uno was used as a stand-in for a Raspberry Pi Pico. Other parts that were used in this configuration included three 220 ohm resistors, one 30k oohm resistor, a buzzer, an RGB LED, and a photoresistor. The three 220 ohm resistors were connected to the positive leads of the RGB LED while the 30 kohm resistor was used in series with the photoresistor.
 
 
 ## Component Test Codes (Ezan Khan)
