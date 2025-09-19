@@ -35,6 +35,8 @@ Watch the [demo video](light%20orchestra%20recording.mov). If that link doesn't 
 
 
 ### CAD Enclosure (Keimaree Smith)
+Online 3D viewing for product housing: https://a360.co/47LtF9N
+
 My task was to make a mock enclosure for the device that's built to scale, should we decide to print this professional housing for our final product. The measurements are as follows:
 Measurements:(LxWxH)
 * Raspberry Pi=63mm x 57mm x 23mm
@@ -82,15 +84,11 @@ curl http://<PICO_IP>/light-intensity
 ## POST request with light intensity data (example use case)
 curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
-# Should the two following sections be removed?
-
 ## Notes
-
 Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
 Duty cycle greater than 1 is undefined, so we clip the duty cycle to the range [0, 1].
 
 
 ## Reference
-
 * [Pico 2WH pinout diagram](https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf) shows the connections to analog and digital IO.
 * Getting Started with Pi Pico [book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
