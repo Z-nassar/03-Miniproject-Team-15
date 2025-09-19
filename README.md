@@ -104,7 +104,7 @@ curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
 
 ## Feature Extension and Documentation (Zachary Nassar)
-I expanded on the mainv2.py code written by Ezan such that light intensity was mapped to a scale of tones instead of volume. Additionally, I changed the behaviour of the LED so that it would flash through a scale of colors as light intensity increased. This can be seen in the file BuzzerLEDScaled.py.
+I expanded on the mainv2.py code written by Ezan such that light intensity was mapped to a scale of tones instead of volume. Additionally, I changed the behaviour of the LED so that it would flash through a scale of colors as light intensity increased. This can be seen in the file BuzzerLEDScaled.py. A video of this can be seen [here](https://drive.google.com/file/d/1YlJdYv4P6-w5sr-QGmZmXdrBWFg7n6NT/view?usp=sharing).
 
 I also generally updated the README and created the TinkerCAD figures of the circuit configurations used in our project.
 
