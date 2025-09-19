@@ -14,8 +14,9 @@ This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Tho
 * Freenove Pico breakout board [FNK0081](https://store.freenove.com/products/fnk0081)
 * Piezo Buzzer SameSky [CPT-3095C-300](https://www.mouser.com/datasheet/3/6118/1/cpt-3095c-300.pdf)
 * Photoresistor Advanced Photonix [NSL-A5013](https://www.mouser.com/datasheet/3/5923/1/ds-nsl-a501-series.pdf) 
-* Three 220 ohm resistors
-* One 10k ohm resistor
+* Three 220 Ohm Resistors
+* Two 10k Ohm Resistor (First Configuration)
+* One 30k Ohm Resistor (Second Configuration)
 
 ## Circuit/Hardware Configuration (Section Written by Zachary Nassar)
 <img width="620" height="606" alt="image" src="https://github.com/user-attachments/assets/69597318-c87e-44b7-86c0-0a5f9d715e4f" />
@@ -58,7 +59,7 @@ This project demonstrates how to integrate an API with the Raspberry Pi Pico 2W 
 The Pico 2W is programmed to connect to a wireless network, making it accessible to other devices on the same network.  
 A student computer can send HTTP API requests (both GET and POST) to the Pico, allowing for real-time control and data retrieval.
 
-## Features
+### Features
 - **Play a Tune**  
   The Pico can generate and play a tune through its connected buzzer.  
   - `GET /play-tune` will play a default tune.  
@@ -69,7 +70,7 @@ A student computer can send HTTP API requests (both GET and POST) to the Pico, a
   - `GET /light-intensity` will return the current sensor reading.  
   - `POST /light-intensity` can log or trigger further actions with the sensor value.
 
-## Project Overview
+### Project Overview
 This setup demonstrates how microcontrollers like the Raspberry Pi Pico 2W can be used in IoT applications,  
 where devices respond to remote commands or provide sensor data over a network.
 
@@ -77,16 +78,16 @@ By combining API requests (GET and POST) with wireless communication, this proje
 for building interactive IoT systems that bridge hardware with network-based control.
 
 
-## GET request to play a default tune
+### GET request to play a default tune
 curl http://<PICO_IP>/play-tune
 
-## POST request to play a tune with parameters
+### POST request to play a tune with parameters
 curl -X POST http://<PICO_IP>/play-tune -d '{"note":"C","duration":2}'
 
-## GET request to read light intensity
+### GET request to read light intensity
 curl http://<PICO_IP>/light-intensity
 
-## POST request with light intensity data (example use case)
+### POST request with light intensity data (example use case)
 curl -X POST http://<PICO_IP>/light-intensity -d '{"action":"log"}'
 
 ## Notes
@@ -97,3 +98,4 @@ Duty cycle greater than 1 is undefined, so we clip the duty cycle to the range [
 ## Reference
 * [Pico 2WH pinout diagram](https://datasheets.raspberrypi.com/picow/pico-2-w-pinout.pdf) shows the connections to analog and digital IO.
 * Getting Started with Pi Pico [book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+* [TinkerCAD](https://www.tinkercad.com/)
