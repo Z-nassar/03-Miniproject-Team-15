@@ -15,8 +15,8 @@ This miniproject focuses on using [MicroPython](./doc/micropython.md) using [Tho
 * Piezo Buzzer SameSky [CPT-3095C-300](https://www.mouser.com/datasheet/3/6118/1/cpt-3095c-300.pdf)
 * Photoresistor Advanced Photonix [NSL-A5013](https://www.mouser.com/datasheet/3/5923/1/ds-nsl-a501-series.pdf) 
 * Three 220 Ohm Resistors
-* Two 10k Ohm Resistor (First Configuration)
-* One 30k Ohm Resistor (Second Configuration)
+* Two 10k Ohm Resistor
+* One 30k Ohm Resistor 
 
 ## Circuit/Hardware Configuration (Section Written by Zachary Nassar)
 <img width="620" height="606" alt="image" src="https://github.com/user-attachments/assets/69597318-c87e-44b7-86c0-0a5f9d715e4f" />
