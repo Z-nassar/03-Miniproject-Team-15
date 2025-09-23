@@ -53,6 +53,8 @@ try:
         if bright < 0: bright = 0.0
         if bright > 1: bright = 1.0
         
+        # Adjust the Scale factor based on button press
+        # Buzzer tones are read with given note frequencies * Scale factor
         if BUTN_PIN.value() == 1:
             SCALE = 2
         else:
@@ -120,4 +122,5 @@ try:
 
 except KeyboardInterrupt:
     buzzer.duty_u16(0)
+
     show(0, 0, 0)
