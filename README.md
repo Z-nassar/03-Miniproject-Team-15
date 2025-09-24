@@ -10,6 +10,7 @@ This project used [MicroPython](./doc/micropython.md) and [Thonny IDE](./doc/tho
 * [Working with API](https://drive.google.com/file/d/1rF_9OHENMlV6wJc0hUqTYPZZ5KIkNX32/view?usp=sharing)
 * [Light Orchestra with Photoresistors, LED, Buzzer](https://drive.google.com/file/d/1zt_kSiG6cxKfdzKx5vofzYIg05cQD7c7/view?usp=sharing)
 * [Light Orchestra with a Scaled Tone Output](https://drive.google.com/file/d/1YlJdYv4P6-w5sr-QGmZmXdrBWFg7n6NT/view?usp=sharing)
+* [Light Orchestra with a Multi-Scale Tone Output](https://drive.google.com/file/d/1wuoc08DCJTXQx4c6QKR1Voj9lJz1dSq0/view?usp=drive_link)
 
 ## Hardware
 * Raspberry Pi Pico WH [SC1634](https://pip.raspberrypi.com/categories/1088-raspberry-pi-pico-2-w) (WiFi, Bluetooth, with header pins)
